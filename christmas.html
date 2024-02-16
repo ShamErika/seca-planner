@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title>CHRISTMAS OR NEW YEARS EVE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="logis.jpg" type="image/x-icon">
+
+    <style>
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+    background-color: black;
+
+}
+
+h3 {
+  color: aliceblue;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+
+// iOS Reset 
+input {
+	appearance: none;
+	border-radius: 0;
+}
+
+.card {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+}
+
+.card-image {
+	border-radius: 8px;
+	overflow: hidden;
+	padding-bottom: 65%;
+	background-image: url('https://media.istockphoto.com/id/1282113191/photo/midnight-on-new-years-eve-in-spain.jpg?s=612x612&w=0&k=20&c=XBLa8rEUq8vJllbEvPPh07PknqZs5cO02NqsopZsFb4=');
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position: 0 5%;
+	position: relative;
+}
+
+.card-heading {
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	right: 10%;
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #735400;
+	line-height: 1.222;
+	small {
+		display: block;
+		font-size: .75em;
+		font-weight: 400;
+		margin-top: .25em;
+	}
+}
+
+.card-form {
+	padding: 2rem 1rem 0;
+}
+
+.input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+	&+.input {
+		margin-top: 1.5rem;
+	}
+}
+
+.input-label {
+	color: #8597a3;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}
+
+.action {
+	margin-top: 2rem;
+}
+
+.action-button {
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: #6658d3;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.card-info {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-size: .875rem;
+	color: #8597a3;
+	a {
+		display: block;
+		color: #6658d3;
+		text-decoration: none;
+	}
+}
+
+
+
+    </style>
+
+
+</head>
+
+
+
+
+<!-- Nav Bar -->
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="#home" class="w3-bar-item w3-button"><b>SECA</b> Planner </a>
+          <div class="w3-right w3-hide-small">
+            <a href="#holiday" class="w3-bar-item w3-button">Holiday</a>
+            <a href="#recep" class="w3-bar-item w3-button">Reception</a>
+            <a href="#limit" class="w3-bar-item w3-button">Guest Limit</a>
+            <a href="#food" class="w3-bar-item w3-button">Food</a>
+            <a href="#invitation" class="w3-bar-item w3-button">Invitation</a>
+            <a href="index.html" class="w3-bar-item w3-button">Back</a>
+
+          </div>
+        </div>
+      </div>
+
+
+      <img src="https://media.istockphoto.com/id/884996076/photo/new-years-eve-holiday-party-pocket-watch-clock-at-midnight.jpg?s=612x612&w=0&k=20&c=oL3eYpChHfss01t843xRnz-9aagjHJozNPREBKc7ZXk=" alt="" style="width:80%">
+
+      <!-- Ceremony -->
+      <div class="w3-container w3-padding-32" id="holiday">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-5"> Holiday </h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">  Christmas </div>
+            <img src="https://media.istockphoto.com/id/1360755962/photo/closeup-of-christmas-pine-tree-with-snow.jpg?s=612x612&w=0&k=20&c=IqWUkeItUZ8nGvMRWgZDpFDlQVSlVqRHBlT_bY4gXXA=" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding"> New Years Eve </div>
+            <img src="https://media.istockphoto.com/id/1195253750/photo/hands-of-couple-with-flutes-of-champagne-and-their-friends-with-bengal-lights.jpg?s=612x612&w=0&k=20&c=Qrs7xC9JMNxPSAgPF7vdqoI9TI8zs2J5UBS5sBhnFgc=" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+      
+          
+    <br>
+    <br>
+
+        <!-- Reception -->
+      <div class="w3-container w3-padding-32" id="recep">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Reception </h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding"> Hotel </div>
+            <img src="https://media.istockphoto.com/id/501160940/photo/christmas-dinner.jpg?s=612x612&w=0&k=20&c=a4SQamia5W7H9-fPPgPyYuh07bs_sWqYcH8rDdB0Qlw=" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding"> Home </div>
+            <img src="https://media.istockphoto.com/id/1185468449/photo/friends-celebrating-christmas-together.jpg?s=612x612&w=0&k=20&c=yGJzVR3gKXvM7-bKYnpBy-6GmQyE4Qovo5ditcbv1wc=" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> Garden </div>
+              <img src="https://media.istockphoto.com/id/1167969204/photo/be-jolly-and-fill-your-belly.jpg?s=612x612&w=0&k=20&c=_dpDhLjfkq__CZ6AeZ1S9qFlkeL6K_xEYNHW2RnBNaM=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> Beach </div>
+              <img src="https://media.istockphoto.com/id/1188330765/photo/coastal-christmas-driftwood-christmas-tree-on-beach.jpg?s=612x612&w=0&k=20&c=RbQfUZwjcXl2MB6gtg9MlUI9VQAK2T2aV_mN-tdHcgw=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+
+
+          <!-- Guest Limit -->
+      <div class="w3-container w3-padding-32" id="limit">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Guest Limit </h3>
+      </div>
+
+    
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <h3 style="color: aliceblue; text-align: center;">Max.100 Guest</h3>
+            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <h3 style="color: aliceblue; text-align: center;">Max.500 Guest</h3>
+            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <h3 style="color: aliceblue; text-align: center;">Max.1k Guest</h3>
+            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+          </div>
+
+
+
+
+<!-- Food  -->
+<div class="w3-container w3-padding-40" id="food">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Food </h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding"> Appetizers </div>
+        <img src="https://media.istockphoto.com/id/898398944/photo/salmon-snack-on-potato-pancake.jpg?s=612x612&w=0&k=20&c=Tv2UCU0g1YTXBiySISMD8KGgjqzkO3UpUFE4fsHq2iA=" alt="" style="width:100%">
+        <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">  Main Course </div>
+        <img src="https://media.istockphoto.com/id/461174267/photo/traditional-sliced-honey-glazed-ham.jpg?s=612x612&w=0&k=20&c=3mLwaQ2Acn3uLdQM4xr14PwkCk5nB-bW5RMzQt4qSUM=" alt="" style="width:100%">
+        <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding"> Desserts </div>
+          <img src="https://media.istockphoto.com/id/624895826/photo/christmas-canape-with-gingerbread-and-foie-gras.jpg?s=612x612&w=0&k=20&c=M8Rragou-K9lFbPTz-lOWCjqL9VTWc75C-B98YeyKCo=" alt="" style="width:100%">
+          <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding"> Cake </div>
+          <img src="https://media.istockphoto.com/id/462242243/photo/christmas-cake-with-snow-and-chocolate.jpg?s=612x612&w=0&k=20&c=GDyAvtHSAytbGDaz3yGtXuHLZJfNUGgZlDXw6tp4p2o=" alt="" style="width:100%">
+          <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+        </div>
+      </div>
+
+<!-- Invitation-->
+<div class="w3-container w3-padding-32" id="invitation">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Invitation </h3>
+  </div>
+
+
+  <div class="container">
+	<!-- code here -->
+	<div class="card">
+		<div class="card-image">	
+			
+		</div>
+		<form class="card-form">
+			<div class="input">
+				<input type="text" class="input-field" value="" required/>
+				<label class="input-label">Full Name</label>
+			</div>
+						<div class="input">
+				<input type="text" class="input-field" value="" required/>
+				<label class="input-label">Email</label>
+			</div>
+						<div class="input">
+				<input type="password" class="input-field" required/>
+				<label class="input-label">Phone Number</label>
+			</div>
+			<div class="action">
+				<button class="action-button">Invite!</button>
+			</div>
+		</form>
+		
+	</div>
+</div>
+  
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <title>GRADUATION</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="shortcut icon" href="logis.jpg" type="image/x-icon">
+
+    <style>
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+    background-color: black;
+
+}
+
+h3 {
+  color: aliceblue;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+
+// iOS Reset 
+input {
+	appearance: none;
+	border-radius: 0;
+}
+
+.card {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+}
+
+.card-image {
+	border-radius: 8px;
+	overflow: hidden;
+	padding-bottom: 65%;
+	background-image: url('https://media.istockphoto.com/id/1312058235/photo/close-up-of-a-mortarboard-and-degree-certificate-put-on-the-table-education-stock-photo.jpg?s=612x612&w=0&k=20&c=JKbqhzbGQXmRosqIdZp7y2qMZv0mFih8mRD66qvRx44=');
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position: 0 5%;
+	position: relative;
+}
+
+.card-heading {
+	position: absolute;
+	left: 10%;
+	top: 15%;
+	right: 10%;
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #735400;
+	line-height: 1.222;
+	small {
+		display: block;
+		font-size: .75em;
+		font-weight: 400;
+		margin-top: .25em;
+	}
+}
+
+.card-form {
+	padding: 2rem 1rem 0;
+}
+
+.input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+	&+.input {
+		margin-top: 1.5rem;
+	}
+}
+
+.input-label {
+	color: #8597a3;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}
+
+.action {
+	margin-top: 2rem;
+}
+
+.action-button {
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: #6658d3;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.card-info {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-size: .875rem;
+	color: #8597a3;
+	a {
+		display: block;
+		color: #6658d3;
+		text-decoration: none;
+	}
+}
+
+
+
+    </style>
+
+
+</head>
+
+
+
+
+<!-- Nav Bar -->
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+          <a href="#home" class="w3-bar-item w3-button"><b>SECA</b> Planner </a>
+          <div class="w3-right w3-hide-small">
+            <a href="#theme" class="w3-bar-item w3-button">Course</a>
+            <a href="#recep" class="w3-bar-item w3-button">Reception</a>
+            <a href="#limit" class="w3-bar-item w3-button">Guest Limit</a>
+            <a href="#food" class="w3-bar-item w3-button">Food</a>
+            <a href="#invitation" class="w3-bar-item w3-button">Invitation</a>
+            <a href="index.html" class="w3-bar-item w3-button">Back</a>
+
+          </div>
+        </div>
+      </div>
+
+
+      <img src="https://media.istockphoto.com/id/947295034/photo/a-group-of-graduates-throwing-graduation-caps-in-the-air.jpg?s=612x612&w=0&k=20&c=oKxq1Cm32iip83LZzx6l0z_WkqSja1mvSZ5BUkhA6I8=" alt="" style="width:80%">
+
+      <!-- Ceremony -->
+      <div class="w3-container w3-padding-32" id="theme">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-5"> Course </h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding">  BS Engineering and Architecture </div>
+            <img src="https://media.istockphoto.com/id/1272471370/photo/architecture-drawing-blueprint-with-pencil-on-hand-on-workplace.jpg?s=612x612&w=0&k=20&c=vQXVp9d2R9qm-XuaTrWi8yvIakqYU2eRFoXy3DMnHOc=" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding"> BS Information Technology and Computer Science </div>
+            <img src="https://media.istockphoto.com/id/636332456/photo/online-education-concept.jpg?s=612x612&w=0&k=20&c=a2m2jmoTXjJ3VthO1vvnpWT5FrHasFfVghSTUo2PH48=" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Nursing </div>
+              <img src="https://media.istockphoto.com/id/1353139772/photo/asian-medical-personnel-listening-to-the-lecture.jpg?s=612x612&w=0&k=20&c=TaU7AHYU6gUJet6dJr4NRGU1yMG9jG375LywRWiREbc=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Medicine </div>
+              <img src="https://media.istockphoto.com/id/903743854/photo/doctor-is-preparing-for-the-exam.jpg?s=612x612&w=0&k=20&c=HDx4qFz6HhVlJUDo_OYX7FSLIo4K4MvOsg6KJNRJ63k=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Education</div>
+              <img src="https://media.istockphoto.com/id/1286519342/photo/english-teacher-standing-at-board-explaining-lesson-to-students.jpg?s=612x612&w=0&k=20&c=CYOYfvkAeEtbF6dKKHahwZZntKGDeGUUposqH3jVKLk=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Psychology </div>
+              <img src="https://media.istockphoto.com/id/1185686688/photo/the-man-is-being-tested.jpg?s=612x612&w=0&k=20&c=yyDLAhWx-lLuU-2u8kBzeCtf1kdR3hsTJw7-R6wNjmQ=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Accountancy </div>
+              <img src="https://media.istockphoto.com/id/1428273486/photo/asian-creative-teams-sit-and-work-together-to-share-inspirational-creativity-in-a-workshop.jpg?s=612x612&w=0&k=20&c=J2PkEa6yk3Md1J-ddTajZZPAkriEq6b07Y51Cy0iG-s=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Business Administration </div>
+              <img src="https://media.istockphoto.com/id/1068618692/photo/business-network-concept.jpg?s=612x612&w=0&k=20&c=nhG46_71dEWiHbkbOh4R7u7WCQHUMQvj2KOHcDgVe44=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Criminology </div>
+              <img src="https://media.istockphoto.com/id/1140990630/photo/the-investigation-of-the-crime.jpg?s=612x612&w=0&k=20&c=Ib8DIkLgkDWCEHc4CBuCPmE4nY87xESoLtTEmmsgofY=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> BS Law </div>
+              <img src="https://media.istockphoto.com/id/1449334081/photo/statue-of-lady-justice-on-desk-of-a-judge-or-lawyer.jpg?s=612x612&w=0&k=20&c=139ZS1ycMRXBqnPEWV3l08zBLNe40WPiAudVnmeQrl8=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          
+    <br>
+    <br>
+
+        <!-- Reception -->
+      <div class="w3-container w3-padding-32" id="recep">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Reception </h3>
+      </div>
+
+      <div class="w3-row-padding">
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding"> Hotel </div>
+            <img src="https://as1.ftcdn.net/v2/jpg/06/48/29/82/1000_F_648298207_cDwMa4oILnSQJZN3llZAbGUHqkpuwm3b.jpg" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+          <div class="w3-display-container">
+            <div class="w3-display-topleft w3-black w3-padding"> Home </div>
+            <img src="https://media.istockphoto.com/id/1253286164/photo/candy-bar-for-graduation-from-primary-school-party-in-backyard.jpg?s=612x612&w=0&k=20&c=ukYUuJgZgw_ULsNuVJw9XNI5YXSGYD57hH7ASuMwFCA=" alt="" style="width:100%">
+            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+          </div>
+        </div>
+        <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> Garden </div>
+              <img src="https://media.istockphoto.com/id/1253283850/photo/teenage-girls-graduation-from-primary-school-party-in-backyard.jpg?s=612x612&w=0&k=20&c=ubUXFUKFPMU3iosMhG_FPcfOCUeHNxsmLxK7KcSUa5Q=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-display-container">
+              <div class="w3-display-topleft w3-black w3-padding"> Beach </div>
+              <img src="https://media.istockphoto.com/id/1133752271/photo/graduation-party-table-setting.jpg?s=612x612&w=0&k=20&c=zfgfLP8XTDT1btOYX-Sc0RIfJi4BotIZ8u14XXeHmds=" alt="" style="width:100%">
+              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+            </div>
+          </div>
+
+
+          <!-- Guest Limit -->
+      <div class="w3-container w3-padding-32" id="limit">
+        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Guest Limit </h3>
+      </div>
+
+    
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <h3 style="color: aliceblue; text-align: center;">Max.100 Guest</h3>
+            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <h3 style="color: aliceblue; text-align: center;">Max.500 Guest</h3>
+            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+          </div>
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <h3 style="color: aliceblue; text-align: center;">Max.1k Guest</h3>
+            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+          </div>
+
+
+
+
+<!-- Food  -->
+<div class="w3-container w3-padding-40" id="food">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Food </h3>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding"> Appetizers </div>
+        <img src="https://media.istockphoto.com/id/1133752222/photo/cup-of-chips-and-drinks.jpg?s=612x612&w=0&k=20&c=NVp1WSgAwNxo2d9QnvTHGqhrynu1IlyOPQ3uXk7iD5Q=" alt="" style="width:100%">
+        <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">  Main Course </div>
+        <img src="https://t3.ftcdn.net/jpg/07/11/10/80/240_F_711108049_HTDhWO9jmPgYyhemuZUmY6o2gVczBfHf.jpg" alt="" style="width:100%">
+        <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding"> Desserts </div>
+          <img src="https://media.istockphoto.com/id/1133752237/photo/cup-cakes-on-a-plate.jpg?s=612x612&w=0&k=20&c=BFqBLIhQYMv9CUZUZ4Wx9HMbZdKVvjWfHUyVfu9bbLU=" alt="" style="width:100%">
+          <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-display-container">
+          <div class="w3-display-topleft w3-black w3-padding"> Cake </div>
+          <img src="https://media.istockphoto.com/id/1285533372/photo/graduation-party-cake-with-hat-and-diploma-decoration.jpg?s=612x612&w=0&k=20&c=-3bQ_1LRfShYoag7ODDqjqbHCXLCv8drHJzZI1nRJO4=" alt="" style="width:100%">
+          <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+        </div>
+      </div>
+
+<!-- Invitation-->
+<div class="w3-container w3-padding-32" id="invitation">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Invitation </h3>
+  </div>
+
+
+  <div class="container">
+	<!-- code here -->
+	<div class="card">
+		<div class="card-image">	
+			
+		</div>
+		<form class="card-form">
+			<div class="input">
+				<input type="text" class="input-field" value="" required/>
+				<label class="input-label">Full Name</label>
+			</div>
+						<div class="input">
+				<input type="text" class="input-field" value="" required/>
+				<label class="input-label">Email</label>
+			</div>
+						<div class="input">
+				<input type="password" class="input-field" required/>
+				<label class="input-label">Phone Number</label>
+			</div>
+			<div class="action">
+				<button class="action-button">Invite!</button>
+			</div>
+		</form>
+		
+	</div>
+</div>
+  
+
+
+
+
+</body>
+</html>
