@@ -1,0 +1,438 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #fff;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
+    /* Hero Section - FULL WIDTH */
+    .hero {
+      background: linear-gradient(135deg, #e94a5c 0%, #f97b6c 50%, #ffc857 100%);
+      color: #fff;
+      padding: 150px 2rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('wedding.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 10;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content p {
+      font-size: 1.4rem;
+      color: #e0e0e0;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-btn {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .hero-btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-3px);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Section Styles */
+    section {
+      padding: 60px 2rem;
+      background: #fff;
+    }
+
+    section:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Two Column Grid */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-large {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: row;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-large:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px);
+    }
+
+    .card-large-image {
+      width: 45%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card-large-content {
+      width: 55%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-large h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #000;
+    }
+
+    .card-large p {
+      color: #555;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .btn-primary {
+      background: #000;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      align-self: flex-start;
+    }
+
+    .btn-primary:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+
+    /* Four Column Grid */
+    .four-col-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-small {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-small:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+    }
+
+    .card-small-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-small-content {
+      padding: 1.25rem;
+    }
+
+    .card-small h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: #000;
+    }
+
+    .card-small p {
+      color: #666;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .btn-secondary {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      width: 100%;
+    }
+
+    .btn-secondary:hover {
+      background: #333;
+    }
+
+    /* Three Column Grid */
+    .three-col-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-medium {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-medium:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+    }
+
+    .card-medium h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+
+    .card-medium p {
+      color: #666;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Contact Form */
+    .form-wrapper {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #f9f9f9;
+      padding: 2.5rem;
+      border-radius: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .btn-submit:hover {
+      background: #333;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0.5rem 0;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .four-col-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .three-col-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-large {
+        flex-direction: column;
+      }
+
+      .card-large-image {
+        width: 100%;
+        height: 250px;
+      }
+
+      .card-large-content {
+        width: 100%;
+      }
+ 
+      section {
+        padding: 40px 1.5rem;
+      }
+    }
