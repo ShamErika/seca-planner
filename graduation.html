@@ -1,401 +1,1158 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SECA Planner - Graduation</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      background-color: #fff;
+    }
 
-    <title>GRADUATION</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="shortcut icon" href="logis.jpg" type="image/x-icon">
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #000;
+      color: #fff;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
 
-    <style>
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
 
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-body {
-    background-color: black;
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      font-weight: 500;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
 
-}
+    .nav-links a:hover {
+      color: #ccc;
+    }
 
-h3 {
-  color: aliceblue;
-}
+    .cart-btn {
+      background: #fff;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 0.95rem;
+    }
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+    .cart-btn:hover {
+      background: #ccc;
+    }
 
-*, *:after, *:before {
-	box-sizing: border-box;
-}
+    .cart-count {
+      background: #e94a5c;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-left: 0.3rem;
+    }
 
+    .hero {
+      background: linear-gradient(135deg, #6658d3 0%, #735400 50%, #ffc857 100%);
+      color: #fff;
+      padding: 150px 2rem;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 600px;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('graduation.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      opacity: 0.9;
+      z-index: 1;
+    }
 
-img {
-	max-width: 100%;
-	display: block;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
 
+    .hero-content h1 {
+      font-size: 4.5rem;
+      margin-bottom: 1rem;
+      font-weight: 900;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
 
-// iOS Reset 
-input {
-	appearance: none;
-	border-radius: 0;
-}
+    .hero-content p {
+      font-size: 1.4rem;
+      color: #e0e0e0;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
 
-.card {
-	margin: 2rem auto;
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	max-width: 425px;
-	background-color: #FFF;
-	border-radius: 10px;
-	box-shadow: 0 10px 20px 0 rgba(#999, .25);
-	padding: .75rem;
-}
+    .hero-btn {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      padding: 15px 40px;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
 
-.card-image {
-	border-radius: 8px;
-	overflow: hidden;
-	padding-bottom: 65%;
-	background-image: url('https://media.istockphoto.com/id/1312058235/photo/close-up-of-a-mortarboard-and-degree-certificate-put-on-the-table-education-stock-photo.jpg?s=612x612&w=0&k=20&c=JKbqhzbGQXmRosqIdZp7y2qMZv0mFih8mRD66qvRx44=');
-	background-repeat: no-repeat;
-	background-size: 150%;
-	background-position: 0 5%;
-	position: relative;
-}
+    .hero-btn:hover {
+      background: #f0f0f0;
+      transform: translateY(-3px);
+    }
 
-.card-heading {
-	position: absolute;
-	left: 10%;
-	top: 15%;
-	right: 10%;
-	font-size: 1.75rem;
-	font-weight: 700;
-	color: #735400;
-	line-height: 1.222;
-	small {
-		display: block;
-		font-size: .75em;
-		font-weight: 400;
-		margin-top: .25em;
-	}
-}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-.card-form {
-	padding: 2rem 1rem 0;
-}
+    section {
+      padding: 60px 2rem;
+      background: #fff;
+    }
 
-.input {
-	display: flex;
-	flex-direction: column-reverse;
-	position: relative;
-	padding-top: 1.5rem;
-	&+.input {
-		margin-top: 1.5rem;
-	}
-}
+    section:nth-child(even) {
+      background: #f9f9f9;
+    }
 
-.input-label {
-	color: #8597a3;
-	position: absolute;
-	top: 1.5rem;
-	transition: .25s ease;
-}
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      font-weight: 700;
+      text-align: center;
+    }
 
-.input-field {
-	border: 0;
-	z-index: 1;
-	background-color: transparent;
-	border-bottom: 2px solid #eee; 
-	font: inherit;
-	font-size: 1.125rem;
-	padding: .25rem 0;
-	&:focus, &:valid {
-		outline: 0;
-		border-bottom-color: #6658d3;
-		&+.input-label {
-			color: #6658d3;
-			transform: translateY(-1.5rem);
-		}
-	}
-}
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
 
-.action {
-	margin-top: 2rem;
-}
+    .card-large {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: row;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
 
-.action-button {
-	font: inherit;
-	font-size: 1.25rem;
-	padding: 1em;
-	width: 100%;
-	font-weight: 500;
-	background-color: #6658d3;
-	border-radius: 6px;
-	color: #FFF;
-	border: 0;
-	&:focus {
-		outline: 0;
-	}
-}
+    .card-large:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      transform: translateY(-10px);
+    }
 
-.card-info {
-	padding: 1rem 1rem;
-	text-align: center;
-	font-size: .875rem;
-	color: #8597a3;
-	a {
-		display: block;
-		color: #6658d3;
-		text-decoration: none;
-	}
-}
+    .card-large-image {
+      width: 45%;
+      height: 280px;
+      object-fit: cover;
+    }
 
+    .card-large-content {
+      width: 55%;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
+    .btn-primary {
+      background: #000;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      align-self: flex-start;
+    }
 
-    </style>
+    .btn-primary:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
 
+    .four-col-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
 
+    .card-small {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-small:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+    }
+
+    .card-small-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-small-content {
+      padding: 1.25rem;
+    }
+
+    .btn-secondary {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      width: 100%;
+    }
+
+    .btn-secondary:hover {
+      background: #333;
+    }
+
+    .three-col-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .card-medium {
+      background: #fff;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-medium:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+    }
+
+    .form-wrapper {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: #f9f9f9;
+      padding: 2.5rem;
+      border-radius: 10px;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: #000;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .btn-submit:hover {
+      background: #333;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 200;
+      overflow-y: auto;
+    }
+
+    .modal.active {
+      display: block;
+    }
+
+    .modal-content {
+      background: white;
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    .modal-header {
+      background: #000;
+      color: white;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 201;
+    }
+
+    .modal-header button {
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .modal-body {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .vendor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .vendor-card {
+      background: white;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .vendor-card:hover {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      transform: translateY(-8px);
+    }
+
+    .vendor-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .rating {
+      color: #ffc857;
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .rating-text {
+      color: #888;
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .vendor-price {
+      background: #e94a5c;
+      color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .add-btn {
+      width: 100%;
+      background: #000;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .add-btn:hover {
+      background: #333;
+    }
+
+    .cart-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+    }
+
+    .cart-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .cart-item {
+      background: white;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-item-info h3 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-info p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    .cart-item-price {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #e94a5c;
+      margin: 0 1rem;
+    }
+
+    .cart-item-remove {
+      background: #e94a5c;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .cart-summary {
+      background: white;
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 2rem;
+      height: fit-content;
+      position: sticky;
+      top: 100px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .summary-row.total {
+      border-top: 2px solid #000;
+      padding-top: 1rem;
+      font-weight: bold;
+      color: #e94a5c;
+      font-size: 1.3rem;
+    }
+
+    .checkout-btn {
+      width: 100%;
+      background: #000;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1.5rem;
+    }
+
+    .checkout-btn:hover:not(:disabled) {
+      background: #333;
+    }
+
+    .checkout-btn:disabled {
+      background: #ccc;
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .status-modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 3px solid #000;
+      border-radius: 15px;
+      padding: 3rem;
+      text-align: center;
+      z-index: 300;
+      max-width: 500px;
+    }
+
+    .status-modal.active {
+      display: block;
+    }
+
+    .status-icon {
+      font-size: 4rem;
+      color: #4CAF50;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .four-col-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .three-col-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card-large {
+        flex-direction: column;
+      }
+
+      .card-large-image {
+        width: 100%;
+        height: 250px;
+      }
+
+      .card-large-content {
+        width: 100%;
+      }
+
+      .cart-container {
+        grid-template-columns: 1fr;
+      }
+
+      .vendor-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
-
-
-
-<!-- Nav Bar -->
 <body>
-    <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-          <a href="#home" class="w3-bar-item w3-button"><b>SECA</b> Planner </a>
-          <div class="w3-right w3-hide-small">
-            <a href="#theme" class="w3-bar-item w3-button">Course</a>
-            <a href="#recep" class="w3-bar-item w3-button">Reception</a>
-            <a href="#limit" class="w3-bar-item w3-button">Guest Limit</a>
-            <a href="#food" class="w3-bar-item w3-button">Food</a>
-            <a href="#invitation" class="w3-bar-item w3-button">Invitation</a>
-            <a href="index.html" class="w3-bar-item w3-button">Back</a>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">SECA</div>
+      <ul class="nav-links">
+        <li><a href="#course">Course</a></li>
+        <li><a href="#reception">Reception</a></li>
+        <li><a href="#guestlimit">Guest Limit</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#invitation">Invitation</a></li>
+        <li><button class="cart-btn" id="cartBtn">🛒 Cart <span class="cart-count" id="cartCount">0</span></button></li>
+        <li><a href="index.html">← Back</a></li>
+      </ul>
+    </div>
+  </nav>
 
+  <section class="hero">
+    <div class="hero-content">
+      <h1>🎓 CELEBRATE SUCCESS</h1>
+      <p>Plan Your Dream Graduation with SECA</p>
+      <a href="#course" class="hero-btn">Start Planning</a>
+    </div>
+  </section>
+
+  <section id="course">
+    <div class="container">
+      <h2 class="section-title">Choose Your Course</h2>
+      <div class="four-col-grid">
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1272471370/photo/architecture-drawing-blueprint-with-pencil-on-hand-on-workplace.jpg?s=612x612&w=0&k=20&c=vQXVp9d2R9qm-XuaTrWi8yvIakqYU2eRFoXy3DMnHOc=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Engineering and Architecture</h3>
+            <button class="btn-secondary" onclick="app.showVendors('engineering')">Pick</button>
           </div>
         </div>
-      </div>
 
-
-      <img src="https://media.istockphoto.com/id/947295034/photo/a-group-of-graduates-throwing-graduation-caps-in-the-air.jpg?s=612x612&w=0&k=20&c=oKxq1Cm32iip83LZzx6l0z_WkqSja1mvSZ5BUkhA6I8=" alt="" style="width:80%">
-
-      <!-- Ceremony -->
-      <div class="w3-container w3-padding-32" id="theme">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-5"> Course </h3>
-      </div>
-
-      <div class="w3-row-padding">
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding">  BS Engineering and Architecture </div>
-            <img src="https://media.istockphoto.com/id/1272471370/photo/architecture-drawing-blueprint-with-pencil-on-hand-on-workplace.jpg?s=612x612&w=0&k=20&c=vQXVp9d2R9qm-XuaTrWi8yvIakqYU2eRFoXy3DMnHOc=" alt="" style="width:100%">
-            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/636332456/photo/online-education-concept.jpg?s=612x612&w=0&k=20&c=a2m2jmoTXjJ3VthO1vvnpWT5FrHasFfVghSTUo2PH48=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Information Technology and Computer Science</h3>
+            <button class="btn-secondary" onclick="app.showVendors('it')">Pick</button>
           </div>
         </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding"> BS Information Technology and Computer Science </div>
-            <img src="https://media.istockphoto.com/id/636332456/photo/online-education-concept.jpg?s=612x612&w=0&k=20&c=a2m2jmoTXjJ3VthO1vvnpWT5FrHasFfVghSTUo2PH48=" alt="" style="width:100%">
-            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1353139772/photo/asian-medical-personnel-listening-to-the-lecture.jpg?s=612x612&w=0&k=20&c=TaU7AHYU6gUJet6dJr4NRGU1yMG9jG375LywRWiREbc=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Nursing</h3>
+            <button class="btn-secondary" onclick="app.showVendors('nursing')">Pick</button>
           </div>
         </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Nursing </div>
-              <img src="https://media.istockphoto.com/id/1353139772/photo/asian-medical-personnel-listening-to-the-lecture.jpg?s=612x612&w=0&k=20&c=TaU7AHYU6gUJet6dJr4NRGU1yMG9jG375LywRWiREbc=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Medicine </div>
-              <img src="https://media.istockphoto.com/id/903743854/photo/doctor-is-preparing-for-the-exam.jpg?s=612x612&w=0&k=20&c=HDx4qFz6HhVlJUDo_OYX7FSLIo4K4MvOsg6KJNRJ63k=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Education</div>
-              <img src="https://media.istockphoto.com/id/1286519342/photo/english-teacher-standing-at-board-explaining-lesson-to-students.jpg?s=612x612&w=0&k=20&c=CYOYfvkAeEtbF6dKKHahwZZntKGDeGUUposqH3jVKLk=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Psychology </div>
-              <img src="https://media.istockphoto.com/id/1185686688/photo/the-man-is-being-tested.jpg?s=612x612&w=0&k=20&c=yyDLAhWx-lLuU-2u8kBzeCtf1kdR3hsTJw7-R6wNjmQ=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Accountancy </div>
-              <img src="https://media.istockphoto.com/id/1428273486/photo/asian-creative-teams-sit-and-work-together-to-share-inspirational-creativity-in-a-workshop.jpg?s=612x612&w=0&k=20&c=J2PkEa6yk3Md1J-ddTajZZPAkriEq6b07Y51Cy0iG-s=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Business Administration </div>
-              <img src="https://media.istockphoto.com/id/1068618692/photo/business-network-concept.jpg?s=612x612&w=0&k=20&c=nhG46_71dEWiHbkbOh4R7u7WCQHUMQvj2KOHcDgVe44=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Criminology </div>
-              <img src="https://media.istockphoto.com/id/1140990630/photo/the-investigation-of-the-crime.jpg?s=612x612&w=0&k=20&c=Ib8DIkLgkDWCEHc4CBuCPmE4nY87xESoLtTEmmsgofY=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> BS Law </div>
-              <img src="https://media.istockphoto.com/id/1449334081/photo/statue-of-lady-justice-on-desk-of-a-judge-or-lawyer.jpg?s=612x612&w=0&k=20&c=139ZS1ycMRXBqnPEWV3l08zBLNe40WPiAudVnmeQrl8=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
-          </div>
-          
-    <br>
-    <br>
 
-        <!-- Reception -->
-      <div class="w3-container w3-padding-32" id="recep">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Reception </h3>
-      </div>
-
-      <div class="w3-row-padding">
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding"> Hotel </div>
-            <img src="https://as1.ftcdn.net/v2/jpg/06/48/29/82/1000_F_648298207_cDwMa4oILnSQJZN3llZAbGUHqkpuwm3b.jpg" alt="" style="width:100%">
-            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/903743854/photo/doctor-is-preparing-for-the-exam.jpg?s=612x612&w=0&k=20&c=HDx4qFz6HhVlJUDo_OYX7FSLIo4K4MvOsg6KJNRJ63k=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Medicine</h3>
+            <button class="btn-secondary" onclick="app.showVendors('medicine')">Pick</button>
           </div>
         </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-          <div class="w3-display-container">
-            <div class="w3-display-topleft w3-black w3-padding"> Home </div>
-            <img src="https://media.istockphoto.com/id/1253286164/photo/candy-bar-for-graduation-from-primary-school-party-in-backyard.jpg?s=612x612&w=0&k=20&c=ukYUuJgZgw_ULsNuVJw9XNI5YXSGYD57hH7ASuMwFCA=" alt="" style="width:100%">
-            <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1286519342/photo/english-teacher-standing-at-board-explaining-lesson-to-students.jpg?s=612x612&w=0&k=20&c=CYOYfvkAeEtbF6dKKHahwZZntKGDeGUUposqH3jVKLk=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Education</h3>
+            <button class="btn-secondary" onclick="app.showVendors('education')">Pick</button>
           </div>
         </div>
-        <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> Garden </div>
-              <img src="https://media.istockphoto.com/id/1253283850/photo/teenage-girls-graduation-from-primary-school-party-in-backyard.jpg?s=612x612&w=0&k=20&c=ubUXFUKFPMU3iosMhG_FPcfOCUeHNxsmLxK7KcSUa5Q=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1185686688/photo/the-man-is-being-tested.jpg?s=612x612&w=0&k=20&c=yyDLAhWx-lLuU-2u8kBzeCtf1kdR3hsTJw7-R6wNjmQ=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Psychology</h3>
+            <button class="btn-secondary" onclick="app.showVendors('psychology')">Pick</button>
           </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-display-container">
-              <div class="w3-display-topleft w3-black w3-padding"> Beach </div>
-              <img src="https://media.istockphoto.com/id/1133752271/photo/graduation-party-table-setting.jpg?s=612x612&w=0&k=20&c=zfgfLP8XTDT1btOYX-Sc0RIfJi4BotIZ8u14XXeHmds=" alt="" style="width:100%">
-              <p><button class="w3-button w3-light-grey w3-block"> Pick </button></p>
-            </div>
+        </div>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1428273486/photo/asian-creative-teams-sit-and-work-together-to-share-inspirational-creativity-in-a-workshop.jpg?s=612x612&w=0&k=20&c=J2PkEa6yk3Md1J-ddTajZZPAkriEq6b07Y51Cy0iG-s=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Accountancy</h3>
+            <button class="btn-secondary" onclick="app.showVendors('accountancy')">Pick</button>
           </div>
+        </div>
 
-
-          <!-- Guest Limit -->
-      <div class="w3-container w3-padding-32" id="limit">
-        <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Guest Limit </h3>
-      </div>
-
-    
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <h3 style="color: aliceblue; text-align: center;">Max.100 Guest</h3>
-            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1068618692/photo/business-network-concept.jpg?s=612x612&w=0&k=20&c=nhG46_71dEWiHbkbOh4R7u7WCQHUMQvj2KOHcDgVe44=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Business Administration</h3>
+            <button class="btn-secondary" onclick="app.showVendors('business')">Pick</button>
           </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <h3 style="color: aliceblue; text-align: center;">Max.500 Guest</h3>
-            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+        </div>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1140990630/photo/the-investigation-of-the-crime.jpg?s=612x612&w=0&k=20&c=Ib8DIkLgkDWCEHc4CBuCPmE4nY87xESoLtTEmmsgofY=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Criminology</h3>
+            <button class="btn-secondary" onclick="app.showVendors('criminology')">Pick</button>
           </div>
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <h3 style="color: aliceblue; text-align: center;">Max.1k Guest</h3>
-            <p><button class="w3-button w3-light-grey w3-block">Pick</button></p>
+        </div>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1449334081/photo/statue-of-lady-justice-on-desk-of-a-judge-or-lawyer.jpg?s=612x612&w=0&k=20&c=139ZS1ycMRXBqnPEWV3l08zBLNe40WPiAudVnmeQrl8=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>BS Law</h3>
+            <button class="btn-secondary" onclick="app.showVendors('law')">Pick</button>
           </div>
-
-
-
-
-<!-- Food  -->
-<div class="w3-container w3-padding-40" id="food">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Food </h3>
-  </div>
-
-  <div class="w3-row-padding">
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding"> Appetizers </div>
-        <img src="https://media.istockphoto.com/id/1133752222/photo/cup-of-chips-and-drinks.jpg?s=612x612&w=0&k=20&c=NVp1WSgAwNxo2d9QnvTHGqhrynu1IlyOPQ3uXk7iD5Q=" alt="" style="width:100%">
-        <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+        </div>
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-      <div class="w3-display-container">
-        <div class="w3-display-topleft w3-black w3-padding">  Main Course </div>
-        <img src="https://t3.ftcdn.net/jpg/07/11/10/80/240_F_711108049_HTDhWO9jmPgYyhemuZUmY6o2gVczBfHf.jpg" alt="" style="width:100%">
-        <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
+  </section>
+
+  <section id="reception">
+    <div class="container">
+      <h2 class="section-title">Select Your Reception Venue</h2>
+      <div class="three-col-grid">
+        <div class="card-medium">
+          <img src="https://as1.ftcdn.net/v2/jpg/06/48/29/82/1000_F_648298207_cDwMa4oILnSQJZN3llZAbGUHqkpuwm3b.jpg" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+          <h3>Hotel</h3>
+          <p>Elegant reception in a luxury venue.</p>
+          <button class="btn-primary" onclick="app.showVendors('hotel')">Select</button>
+        </div>
+
+        <div class="card-medium">
+          <img src="https://media.istockphoto.com/id/1253286164/photo/candy-bar-for-graduation-from-primary-school-party-in-backyard.jpg?s=612x612&w=0&k=20&c=ukYUuJgZgw_ULsNuVJw9XNI5YXSGYD57hH7ASuMwFCA=" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+          <h3>Home</h3>
+          <p>Cozy gathering with family and friends.</p>
+          <button class="btn-primary" onclick="app.showVendors('home')">Select</button>
+        </div>
+
+        <div class="card-medium">
+          <img src="https://media.istockphoto.com/id/1253283850/photo/teenage-girls-graduation-from-primary-school-party-in-backyard.jpg?s=612x612&w=0&k=20&c=ubUXFUKFPMU3iosMhG_FPcfOCUeHNxsmLxK7KcSUa5Q=" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+          <h3>Garden</h3>
+          <p>Beautiful outdoor celebration setting.</p>
+          <button class="btn-primary" onclick="app.showVendors('garden')">Select</button>
+        </div>
       </div>
     </div>
-    <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding"> Desserts </div>
-          <img src="https://media.istockphoto.com/id/1133752237/photo/cup-cakes-on-a-plate.jpg?s=612x612&w=0&k=20&c=BFqBLIhQYMv9CUZUZ4Wx9HMbZdKVvjWfHUyVfu9bbLU=" alt="" style="width:100%">
-          <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
-        </div>
-      </div>
-      <div class="w3-col l3 m6 w3-margin-bottom">
-        <div class="w3-display-container">
-          <div class="w3-display-topleft w3-black w3-padding"> Cake </div>
-          <img src="https://media.istockphoto.com/id/1285533372/photo/graduation-party-cake-with-hat-and-diploma-decoration.jpg?s=612x612&w=0&k=20&c=-3bQ_1LRfShYoag7ODDqjqbHCXLCv8drHJzZI1nRJO4=" alt="" style="width:100%">
-          <p><button class="w3-button w3-light-grey w3-block"> Choose </button></p>
-        </div>
-      </div>
+  </section>
 
-<!-- Invitation-->
-<div class="w3-container w3-padding-32" id="invitation">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16"> Invitation </h3>
+  <section id="guestlimit">
+    <div class="container">
+      <h2 class="section-title">Guest Capacity</h2>
+      <div class="three-col-grid">
+        <div class="card-medium">
+          <h3>Intimate</h3>
+          <p><strong>Max 100 Guests</strong></p>
+          <p style="color: #666; font-size: 0.9rem;">Perfect for your closest loved ones</p>
+          <button class="btn-primary" onclick="app.showVendors('max100')">Select</button>
+        </div>
+
+        <div class="card-medium">
+          <h3>Medium</h3>
+          <p><strong>Max 500 Guests</strong></p>
+          <p style="color: #666; font-size: 0.9rem;">Extended family and friends celebration</p>
+          <button class="btn-primary" onclick="app.showVendors('max500')">Select</button>
+        </div>
+
+        <div class="card-medium">
+          <h3>Grand</h3>
+          <p><strong>Max 1,000+ Guests</strong></p>
+          <p style="color: #666; font-size: 0.9rem;">Large celebration with extended community</p>
+          <button class="btn-primary" onclick="app.showVendors('max1k')">Select</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="food">
+    <div class="container">
+      <h2 class="section-title">Culinary Delights</h2>
+      <div class="four-col-grid">
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1133752222/photo/cup-of-chips-and-drinks.jpg?s=612x612&w=0&k=20&c=NVp1WSgAwNxo2d9QnvTHGqhrynu1IlyOPQ3uXk7iD5Q=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>Appetizers</h3>
+            <p>Delicious starters</p>
+            <button class="btn-secondary" onclick="app.showVendors('appetizers')">Choose</button>
+          </div>
+        </div>
+
+        <div class="card-small">
+          <img src="https://t3.ftcdn.net/jpg/07/11/10/80/240_F_711108049_HTDhWO9jmPgYyhemuZUmY6o2gVczBfHf.jpg" class="card-small-image">
+          <div class="card-small-content">
+            <h3>Main Course</h3>
+            <p>Exquisite dining</p>
+            <button class="btn-secondary" onclick="app.showVendors('maincourse')">Choose</button>
+          </div>
+        </div>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1133752237/photo/cup-cakes-on-a-plate.jpg?s=612x612&w=0&k=20&c=BFqBLIhQYMv9CUZUZ4Wx9HMbZdKVvjWfHUyVfu9bbLU=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>Desserts</h3>
+            <p>Sweet treats</p>
+            <button class="btn-secondary" onclick="app.showVendors('desserts')">Choose</button>
+          </div>
+        </div>
+
+        <div class="card-small">
+          <img src="https://media.istockphoto.com/id/1285533372/photo/graduation-party-cake-with-hat-and-diploma-decoration.jpg?s=612x612&w=0&k=20&c=-3bQ_1LRfShYoag7ODDqjqbHCXLCv8drHJzZI1nRJO4=" class="card-small-image">
+          <div class="card-small-content">
+            <h3>Cake</h3>
+            <p>Custom designs</p>
+            <button class="btn-secondary" onclick="app.showVendors('cake')">Choose</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="invitation">
+    <div class="container">
+      <h2 class="section-title">Send Graduation Invitations</h2>
+      <div class="form-wrapper">
+        <form>
+          <div class="form-group">
+            <label>Guest Full Name</label>
+            <input type="text" placeholder="Enter guest name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="Enter email address" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="Enter phone number" required>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Add a personal message..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Send Invitation</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 SECA Planner. All rights reserved.</p>
+    <p>Created by <a href="https://github.com/ShamErika" target="_blank">Sham Erika C. Aquino</a></p>
+  </footer>
+
+  <!-- Vendor Modal -->
+  <div id="vendorModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="vendorTitle">Select Vendor</h2>
+        <button onclick="app.closeVendorModal()">✕ Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="vendor-grid" id="vendorGrid"></div>
+      </div>
+    </div>
   </div>
 
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>🛒 Shopping Cart</h2>
+        <button onclick="app.closeCart()">✕ Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="cart-container">
+          <div class="cart-items" id="cartItems"></div>
+          <div class="cart-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+              <span>Subtotal:</span>
+              <span id="subtotal">$0</span>
+            </div>
+            <div class="summary-row">
+              <span>Tax (10%):</span>
+              <span id="tax">$0</span>
+            </div>
+            <div class="summary-row total">
+              <span>Total:</span>
+              <span id="total">$0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" onclick="app.checkout()">✓ Confirm Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <div class="container">
-	<!-- code here -->
-	<div class="card">
-		<div class="card-image">	
-			
-		</div>
-		<form class="card-form">
-			<div class="input">
-				<input type="text" class="input-field" value="" required/>
-				<label class="input-label">Full Name</label>
-			</div>
-						<div class="input">
-				<input type="text" class="input-field" value="" required/>
-				<label class="input-label">Email</label>
-			</div>
-						<div class="input">
-				<input type="password" class="input-field" required/>
-				<label class="input-label">Phone Number</label>
-			</div>
-			<div class="action">
-				<button class="action-button">Invite!</button>
-			</div>
-		</form>
-		
-	</div>
-</div>
-  
+  <!-- Status Modal -->
+  <div id="statusModal" class="status-modal">
+    <div class="status-icon">✓</div>
+    <h2>Order Confirmed!</h2>
+    <p>Your graduation package is being prepared. We will contact you soon!</p>
+    <button onclick="app.completeOrder()">Back to Home</button>
+  </div>
 
+  <script>
+    const app = {
+      cart: [],
 
+      vendors: {
+        engineering: [
+          { name: 'Engineering Excellence Package', price: 500, rating: 4.8, reviews: 245 },
+          { name: 'Architecture Studios Celebration', price: 400, rating: 4.5, reviews: 189 },
+          { name: 'Premium Engineering Events', price: 750, rating: 4.9, reviews: 312 }
+        ],
+        it: [
+          { name: 'Tech Graduation Services', price: 800, rating: 4.9, reviews: 423 },
+          { name: 'Digital Celebration Experts', price: 650, rating: 4.7, reviews: 198 },
+          { name: 'Premium IT Events', price: 900, rating: 5.0, reviews: 267 }
+        ],
+        nursing: [
+          { name: 'Healthcare Professionals Celebration', price: 600, rating: 4.8, reviews: 312 },
+          { name: 'Nursing Pride Events', price: 500, rating: 4.6, reviews: 234 },
+          { name: 'Medical Graduation Specialists', price: 750, rating: 4.9, reviews: 289 }
+        ],
+        medicine: [
+          { name: 'Medical Excellence Celebration', price: 900, rating: 4.9, reviews: 412 },
+          { name: 'Doctor Graduation Services', price: 750, rating: 4.7, reviews: 267 },
+          { name: 'Premium Medical Events', price: 1100, rating: 5.0, reviews: 345 }
+        ],
+        education: [
+          { name: 'Educator Excellence Package', price: 550, rating: 4.8, reviews: 234 },
+          { name: 'Teacher Graduation Specialists', price: 450, rating: 4.6, reviews: 189 },
+          { name: 'Premium Education Events', price: 700, rating: 4.9, reviews: 267 }
+        ],
+        psychology: [
+          { name: 'Psychology Graduation Events', price: 600, rating: 4.7, reviews: 198 },
+          { name: 'Behavioral Science Celebration', price: 500, rating: 4.6, reviews: 167 },
+          { name: 'Premium Psychology Services', price: 800, rating: 4.9, reviews: 289 }
+        ],
+        accountancy: [
+          { name: 'Accountancy Excellence Package', price: 700, rating: 4.9, reviews: 345 },
+          { name: 'Finance Professional Events', price: 600, rating: 5.0, reviews: 267 },
+          { name: 'Luxury Accounting Celebration', price: 900, rating: 4.8, reviews: 234 }
+        ],
+        business: [
+          { name: 'Business Excellence Celebration', price: 800, rating: 4.8, reviews: 267 },
+          { name: 'Corporate Events Specialists', price: 700, rating: 4.9, reviews: 345 },
+          { name: 'Premium Business Services', price: 1000, rating: 5.0, reviews: 289 }
+        ],
+        criminology: [
+          { name: 'Criminal Justice Celebration', price: 550, rating: 4.6, reviews: 189 },
+          { name: 'Law Enforcement Events', price: 650, rating: 4.9, reviews: 267 },
+          { name: 'Premium Criminology Services', price: 800, rating: 4.8, reviews: 203 }
+        ],
+        law: [
+          { name: 'Law Graduate Celebration', price: 900, rating: 4.8, reviews: 267 },
+          { name: 'Legal Professional Events', price: 800, rating: 4.9, reviews: 345 },
+          { name: 'Premium Law Graduation', price: 1100, rating: 5.0, reviews: 289 }
+        ],
+        hotel: [
+          { name: 'Royal Hotel Ballroom', price: 2500, rating: 4.8, reviews: 512 },
+          { name: 'Grand Hotel Events', price: 2000, rating: 4.6, reviews: 389 },
+          { name: 'Luxury Palace Hotel', price: 3000, rating: 4.9, reviews: 456 }
+        ],
+        home: [
+          { name: 'Home Party Planning', price: 500, rating: 4.9, reviews: 276 },
+          { name: 'Backyard Celebration Experts', price: 400, rating: 4.7, reviews: 198 },
+          { name: 'Premium Home Events', price: 700, rating: 4.8, reviews: 334 }
+        ],
+        garden: [
+          { name: 'Garden Paradise', price: 1500, rating: 4.7, reviews: 198 },
+          { name: 'Botanical Garden Venue', price: 1300, rating: 4.6, reviews: 167 },
+          { name: 'Secret Garden Events', price: 1700, rating: 4.9, reviews: 289 }
+        ],
+        max100: [
+          { name: 'Intimate Venue Specialists', price: 1000, rating: 4.8, reviews: 189 },
+          { name: 'Small Gatherings Pro', price: 800, rating: 4.7, reviews: 156 },
+          { name: 'Premium Intimate Events', price: 1200, rating: 4.9, reviews: 234 }
+        ],
+        max500: [
+          { name: 'Mid-Size Event Venue', price: 2500, rating: 4.8, reviews: 312 },
+          { name: 'Professional Medium Venues', price: 2000, rating: 4.7, reviews: 267 },
+          { name: 'Premium Medium Events', price: 3000, rating: 4.9, reviews: 389 }
+        ],
+        max1k: [
+          { name: 'Grand Venue Specialists', price: 5000, rating: 4.9, reviews: 512 },
+          { name: 'Large Scale Event Pros', price: 6000, rating: 4.8, reviews: 456 },
+          { name: 'Mega Events Premium', price: 7500, rating: 5.0, reviews: 567 }
+        ],
+        appetizers: [
+          { name: 'Gourmet Appetizers', price: 800, rating: 4.9, reviews: 234 },
+          { name: 'Fancy Bites Catering', price: 1000, rating: 4.8, reviews: 189 },
+          { name: 'Luxury Starters', price: 1200, rating: 4.7, reviews: 156 }
+        ],
+        maincourse: [
+          { name: 'Gourmet Delights Catering', price: 3500, rating: 4.9, reviews: 567 },
+          { name: 'Fine Dining Events', price: 4000, rating: 5.0, reviews: 423 },
+          { name: 'Premium Events Catering', price: 3000, rating: 4.7, reviews: 278 }
+        ],
+        desserts: [
+          { name: 'Sweet Creations Bakery', price: 500, rating: 4.8, reviews: 312 },
+          { name: 'Premium Sweets Studio', price: 700, rating: 4.9, reviews: 234 },
+          { name: 'Artisan Desserts', price: 900, rating: 4.7, reviews: 189 }
+        ],
+        cake: [
+          { name: 'Graduation Cake Artistry', price: 600, rating: 4.8, reviews: 312 },
+          { name: 'Premium Cake Design', price: 800, rating: 4.9, reviews: 267 },
+          { name: 'Artisan Cake Masters', price: 1000, rating: 5.0, reviews: 345 }
+        ]
+      },
 
+      getStars(rating) {
+        let stars = '';
+        for (let i = 0; i < 5; i++) {
+          stars += i < Math.floor(rating) ? '★' : '☆';
+        }
+        return stars;
+      },
 
+      showVendors(category) {
+        const vendors = this.vendors[category] || [];
+        const grid = document.getElementById('vendorGrid');
+        document.getElementById('vendorTitle').textContent = 'Select ' + category.charAt(0).toUpperCase() + category.slice(1) + ' Vendor';
+        
+        grid.innerHTML = '';
+        vendors.forEach(vendor => {
+          const card = document.createElement('div');
+          card.className = 'vendor-card';
+          card.innerHTML = '<h3>' + vendor.name + '</h3>' +
+            '<div class="rating">' + this.getStars(vendor.rating) + '</div>' +
+            '<div class="rating-text">' + vendor.rating + ' (' + vendor.reviews + ' reviews)</div>' +
+            '<div class="vendor-price">$' + vendor.price.toLocaleString() + '</div>' +
+            '<button class="add-btn" onclick="app.addToCart(\'' + vendor.name + '\', ' + vendor.price + ', ' + vendor.rating + ', \'' + category + '\')">Add to Cart</button>';
+          grid.appendChild(card);
+        });
+
+        document.getElementById('vendorModal').classList.add('active');
+        window.scrollTo(0, 0);
+      },
+
+      addToCart(name, price, rating, category) {
+        this.cart.push({
+          id: Date.now(),
+          name: name,
+          price: price,
+          rating: rating,
+          category: category
+        });
+        this.updateCart();
+        alert('✓ ' + name + ' added to cart!');
+      },
+
+      removeFromCart(id) {
+        this.cart = this.cart.filter(item => item.id !== id);
+        this.updateCart();
+      },
+
+      updateCart() {
+        document.getElementById('cartCount').textContent = this.cart.length;
+        const container = document.getElementById('cartItems');
+        
+        if (this.cart.length === 0) {
+          container.innerHTML = '<div class="empty-cart"><div style="font-size: 3rem;">🛒</div><p>Your cart is empty</p></div>';
+        } else {
+          container.innerHTML = '';
+          this.cart.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'cart-item';
+            div.innerHTML = '<div class="cart-item-info">' +
+              '<h3>' + item.name + '</h3>' +
+              '<p>Category: ' + item.category + '</p>' +
+              '<p>' + this.getStars(item.rating) + ' ' + item.rating + '</p>' +
+              '</div>' +
+              '<div class="cart-item-price">$' + item.price.toLocaleString() + '</div>' +
+              '<button class="cart-item-remove" onclick="app.removeFromCart(' + item.id + ')">Remove</button>';
+            container.appendChild(div);
+          });
+        }
+
+        this.updateSummary();
+      },
+
+      updateSummary() {
+        const subtotal = this.cart.reduce((sum, item) => sum + item.price, 0);
+        const tax = Math.round(subtotal * 0.1);
+        const total = subtotal + tax;
+
+        document.getElementById('subtotal').textContent = '$' + subtotal.toLocaleString();
+        document.getElementById('tax').textContent = '$' + tax.toLocaleString();
+        document.getElementById('total').textContent = '$' + total.toLocaleString();
+        document.getElementById('checkoutBtn').disabled = this.cart.length === 0;
+      },
+
+      openCart() {
+        this.updateCart();
+        document.getElementById('cartModal').classList.add('active');
+      },
+
+      closeCart() {
+        document.getElementById('cartModal').classList.remove('active');
+      },
+
+      closeVendorModal() {
+        document.getElementById('vendorModal').classList.remove('active');
+      },
+
+      checkout() {
+        if (this.cart.length === 0) return;
+        document.getElementById('cartModal').classList.remove('active');
+        document.getElementById('statusModal').classList.add('active');
+      },
+
+      completeOrder() {
+        this.cart = [];
+        document.getElementById('statusModal').classList.remove('active');
+        document.getElementById('cartCount').textContent = '0';
+        window.scrollTo(0, 0);
+      }
+    };
+
+    document.getElementById('cartBtn').addEventListener('click', () => app.openCart());
+  </script>
+ 
 </body>
 </html>
